@@ -18,3 +18,4 @@ try {
 } catch (err) {
   console.error('Error conecteando a la Base de Datos:', err)
 }
+export default app;
