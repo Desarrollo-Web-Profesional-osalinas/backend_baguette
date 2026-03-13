@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node api/index.js",
-    "dev": "nodemon api/index.js",
-    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
     "lint": "eslint src",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "keywords": [],
   "author": "",
