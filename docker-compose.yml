@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app-logic:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - api-internal
+    # Restricción: No se utiliza el comando "ports:" para no exponerlo en el host
+    expose:
+      - "3000"
+
+  web-server:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - app-logic
+    networks:
+      - api-internal
+
+networks:
+  api-internal:
+    driver: bridge

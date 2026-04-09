@@ -6,6 +6,7 @@ import bodyParser from 'body-parser'
 
 import { pedidosRoutes } from './rutas/pedidos.js';
 import { usuarioRoutes } from './rutas/usuarios.js';
+import { comentariosRoutes } from './rutas/comentarios.js';
 
 
 // Crear la aplicación Express
@@ -18,6 +19,7 @@ app.use(bodyParser.json())
 // Configurar rutas
 pedidosRoutes(app)
 usuarioRoutes(app)
+comentariosRoutes(app)
 
 
 // Ruta de prueba
